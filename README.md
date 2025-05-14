@@ -1,1 +1,3 @@
-# E-Shop_DIGITIVA
+# E-SHOP - DIGITIVA
+## E-Shop, selling electronics
+...
