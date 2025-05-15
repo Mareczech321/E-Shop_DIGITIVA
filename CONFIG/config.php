@@ -1,8 +1,8 @@
 <?php 
 
-define('DB_HOST', 'sql5.webzdarma.cz',);
-define('DB_NAME', 'digitivawzcz3246');
-define('DB_USER', 'digitivawzcz3246');
-define('DB_PASSWORD', 'r&9&j&8A%5%RDFSi9M23');
+    define('DB_HOST', 'sql6.webzdarma.cz',);
+    define('DB_NAME', 'marekmulacwz6820');
+    define('DB_USER', 'marekmulacwz6820');
+    define('DB_PASSWORD', 'IauD25_%))*K6892618-');
 
 ?>
