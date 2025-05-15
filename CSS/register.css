@@ -50,11 +50,6 @@ input:hover{
     color: white;
     font-size: 20px;
 }
-#login_form:hover{
-    article:hover{
-        transform: scale(1.05);
-    }
-}
 input{
     border: none;
     border-radius: 5px;
@@ -78,10 +73,9 @@ input:focus {
 
 #registration{
     position: relative;
-    bottom: -300px;
+    bottom: -250px;
     text-align: center;
     width: 500px;
-    z-index: 1;
 }
 #registration_link{
     text-decoration: none;
@@ -113,7 +107,7 @@ footer p{
 }
 #password_input{
     margin-left: 0;
-    margin-right: -24px;
+    margin-right: -28px;
 }
 #password_array:hover{
     transform: scale(1.05);

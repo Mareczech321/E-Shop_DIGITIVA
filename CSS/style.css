@@ -12,13 +12,13 @@ nav a{
 #login-buttons{
     position: relative;
     float: right;
-    top: 40px;
+    top: 15px;
     padding: 15px 20px;
     background: #ffc663;
     border: solid 2px lightgray;
     border-radius: 15px;
     display: block;
-    font-size: 20px;
+    font-size: 15px;
     transition: transform 0.3s ease;
 }
 #login-buttons:hover{
@@ -27,7 +27,7 @@ nav a{
 nav{
     border-bottom: solid 2px lightgray;
     padding-right: 100px;
-    height: 150px;
+    height: 100px;
     background: linear-gradient(90deg, #D4AF37 0%, #B8860B 100%);
     position: sticky;
     top: 0px;
@@ -35,10 +35,10 @@ nav{
 
 #search_bar{
     position: relative;
-    height: 80px;
-    width: 600px;
+    height: 50px;
+    width: 400px;
     border: solid 2px lightgray;
-    border-radius: 20px;
+    border-radius: 40px;
     font-size: 30px;
     padding-left: 20px 0 0 0;
     text-align: center;
@@ -54,6 +54,7 @@ nav{
     height: 30px;
     width: 30px;
     margin-left: 10px;
+    position: relative;
     top: -5px;
     transition: transform 0.3s ease;
 }
@@ -63,10 +64,10 @@ nav{
 }
 #search{
     position: relative;
-    top: 35px;
+    top: 22.5px;
     margin: auto;
     display: inline-block;
-    left: 32.5%;
+    left: 39%;
     max-width: 800px;
 }
 
@@ -79,7 +80,7 @@ nav{
     float: left;
     left: 20px;
     position: relative;
-    top: 50px;
+    top: 35px;
     transition: transform 0.3s ease;
 }
 #burger_menu:hover{
@@ -90,13 +91,13 @@ nav{
 }
 
 #logo{
-    top: 15px;
-    height: 100px;
+    top: 5px;
+    height: 70px;
     position: absolute;
     background-color: black;
     background-size: cover;
-    left: 150px;
-    padding: 10px 75px;
+    left: 100px;
+    padding: 10px 50px;
     border-radius: 10px;
 }
 #logo:hover{
