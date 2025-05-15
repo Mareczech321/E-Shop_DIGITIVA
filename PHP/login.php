@@ -1,27 +1,66 @@
+<?php
+    session_start();
+    require '../CONFIG/db.php';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
+
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['ID'];
+                $_SESSION['username'] = $user['username'];
+                if($_SESSION['username'] == "admin"){
+                    header("Location: admin.php");
+                    exit;
+                }
+                header("Location: dashboard.php");
+                exit;
+            } else {
+                $error = "Invalid password.";
+            }
+        } else {
+            $error = "Invalid username.";
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitiva</title>
+    <title>Digitiva - Login</title>
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">
 </head>
 <body>
     <article>
-        <a href="http://digitiva.wz.cz:8080/"><img src="../IMG/Digitiva2.png" id="logo"></a>
+        <a href="http://marekmulac.wz.cz:8080"><img src="../IMG/Digitiva2.png" id="logo"></a>
 
         <form method="post" id="login_form">
-            <label for="Username">Username</label><br><input type="text" name="Username" placeholder="  Username"><br>
-            <label for="Password">Password</label><br><input type="password" name="Password" placeholder="  Password"><br>
-            <label for="E-mail">E-mail</label><br><input type="text" name="E-mail" placeholder="  E-mail"><br>
-            <input type="submit" name="login" id="login_submit" value="Login">
+            <label for="Username">Username</label><br><input type="text" name="username" placeholder="  Username"><br>
+            <label for="Password">Password</label><br><input type="password" name="password" placeholder="  Password" id="password_input"><input type="checkbox" onclick="togglePassword()" id="show_password"><br>
+            <input type="submit" name="submit" id="login_submit" value="Login">
         </form>
+        <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+        <footer id="registration">
+            New User? <a href="./register.php" id="registration_link">Create account</a>
+        </footer>
     </article>
 </body>
 </html>
-<?php
-    
-
-    
-?>
+<script>
+    function togglePassword() {
+        var x = document.getElementById("password_input");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
