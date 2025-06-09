@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+.cta-button:hover{
+  text-decoration: none;
+}
+
+body {
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  position: relative;
+  height: 90px;
+  left: 75px;
+  background-color: black;
+  padding: 10px 80px;
+  border-radius: 10px;
+  background-image: url(../IMG/Digitiva2.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  right: 267px;
+}
+
+#search_bar{
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search {
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+}
+
+.hero {
+  height: 500px;
+  background-image: url('../IMG/background_cropped.jpg');
+  background-size: cover;               
+  background-position: center center;   
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #cf9400;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 2px 20px rgba(255, 255, 255, 0.25), 1px 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.product-card button {
+  background: #cf9400;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #2563eb;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  background: #f1f5f9;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+}
+.product-card img{
+    height: 200px;
+    width: auto;
+}
+#search_bar:focus{
+    outline: none;
+}
+#search_bar{
+    padding-left: 10px;
+}
+#cart{
+  height: 30px;
+  margin-right: 20px;
+  margin-left: -70px;
+}
+#logo{
+  position: relative;
+  height: 80px;
+  left: 75px;
+  background-color: black;
+  padding: 10px 50px;
+  border-radius: 10px;
+  z-index: 1;
+}
+#navigace a{
+  position: relative;
+  margin-right: 15px;
+  left: -200px;
+}
+#login{
+  position: relative;
+  bottom: 5px;
+}
+a:hover{
+  text-decoration: underline;
+}
+.header{
+  background: linear-gradient(to bottom right, #D4AF37 0%, #B8860B 100%);
+  background-size: cover;
+}
+#subnav{
+  display: none;
+}
+#nabidky{
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+
+  #subnav {
+    position: fixed;
+    top: 80px; /* výška headeru */
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 7.5px;
+    z-index: 1;
+    transition: top 0.3s ease;
+    height: 35px;
+  }
+
+  .hero {
+    margin-top: 110px; /* kvůli header + subnav */
+  }
+
+  #navigace {
+    display: none;
+  }
+
+  #login {
+    display: none;
+  }
+
+  .search {
+    max-width: 100px;
+    left: -90px;
+  }
+
+  #cart {
+    position: relative;
+    right: -25px;
+    top: 2.5px;
+  }
+
+  #logo{
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover;
+    object-position: 0 50%;
+    left: -15px;
+  }
+}

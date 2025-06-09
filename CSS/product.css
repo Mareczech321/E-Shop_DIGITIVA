@@ -1,0 +1,445 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #093050;
+}
+
+.header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: linear-gradient(to bottom right, #D4AF37 0%, #B8860B 100%);
+  background-size: cover;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  position: relative;
+  height: 90px;
+  left: 75px;
+  background-color: black;
+  padding: 10px 80px;
+  border-radius: 10px;
+  background-image: url(../IMG/Digitiva2.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  position: relative;
+  right: -40px;
+}
+
+#search_bar{
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+#search_bar:focus{
+  outline: none;
+}
+
+#search {
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+}
+
+.hero {
+  height: 500px;
+  background-image: url('../IMG/background_cropped.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #093050;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+}
+.product-card{
+  grid-template-columns: auto auto auto;
+}
+
+.products {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  flex: 1;
+  max-width: 1500px;
+}
+.product-grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  flex: 1;
+  position: relative;
+  left: 250px;
+  max-width: 1500px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  height: 450px;
+  margin: 25px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card{
+  grid-template-columns: auto auto auto;
+}
+
+.product-card img {
+  height: 225px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.product-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: -100px;
+  position: relative;
+  top: -75px;
+}
+
+.price {
+  color: #2563eb;
+  font-size: 1.2rem;
+  position: relative;
+  top: 75px;
+}
+
+.product-card button {
+  background: #cf9400;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 75px;
+}
+
+.footer {
+  background: #f1f5f9;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+}
+
+#nabidka_nadpis{
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 25px;
+}
+
+#filtry {
+  display: inline-block;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  width: 400px;
+  padding: 0;
+  text-align: center;
+  max-height: 550px;
+  margin: 0;
+}
+
+.filtr {
+  width: 100%;
+  border: none;
+  background-color: #ebcf88;
+  padding: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.filtr p {
+  position: relative;
+  left: 10px;
+  display: inline-block;
+}
+
+li {
+  font-size: 14px;
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  display: none;
+  margin-bottom: 5px;
+}
+
+.filtr:focus {
+  outline: none;
+  border: none;
+}
+
+#filtry hr {
+  margin-bottom: 5px;
+}
+
+.rozbalit {
+  position: relative;
+  height: 15px;
+  right: 4px;
+  float: right;
+  transform: rotate(-90deg);
+  margin: 3px;
+  top: 3px;
+}
+
+#logo {
+  height: 50px;
+  position: relative;
+  left: 25px;
+  margin-right: 50px;
+}
+
+#cart {
+  height: 30px;
+  margin-right: 20px;
+}
+
+#login {
+  position: relative;
+  bottom: 5px;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a p:hover {
+  text-decoration: underline;
+}
+
+.do_Kosiku {
+  background-color: #f91e23;
+}
+
+#hide_filters {
+  display: none;
+}
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 400px;
+  margin: 10px;
+}
+
+.product-card img {
+  height: 225px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  margin-top: 75px;
+  font-size: 1.1rem;
+}
+
+.price {
+  color: #2563eb;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.product-card button {
+  background: #cf9400;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.products {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+#filtry {
+  width: 400px;
+  flex-shrink: 0;  /* 👈 zabrání zmenšování */
+  height: 550px;
+}
+
+.product-grid {
+  flex: 1;  /* 👈 zabere zbytek místa */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  left: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  #logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: 0 50%;
+    left: -15px;
+  }
+
+  #navigace {
+    display: none;
+  }
+
+  .search {
+    max-width: 100px;
+    left: -90px;
+  }
+
+  #login {
+    display: none;
+  }
+
+  #cart {
+    position: relative;
+    right: -25px;
+    top: 2.5px;
+  }
+
+  #filtry {
+    margin: auto;
+    position: relative;
+    left: -15px;
+  }
+
+  header {
+    position: sticky;
+    top: 20px;
+  }
+
+  #filters_hidden {
+    display: none;
+  }
+
+  #hide_filters {
+    display: block;
+    position: relative;
+    height: 15px;
+    right: 10px;
+    float: right;
+    transform: rotate(-90deg);
+    top: 12.5px;
+  }
+
+  .filtry {
+    max-width: 600px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
