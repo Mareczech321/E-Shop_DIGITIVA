@@ -3,7 +3,7 @@
 
   Empowering seamless shopping experiences, effortlessly delivered.
 
-<div margin="auto">
+<div align="center">
   <img src="https://img.shields.io/badge/code-PHP-blue.svg" />
   <img src="https://img.shields.io/badge/last%20commit-today-brightgreen.svg" />
   <img src="https://img.shields.io/github/languages/count/Mareczech321/E-Shop_DIGITIVA.svg" />
