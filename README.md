@@ -3,6 +3,8 @@
 
   Empowering seamless shopping experiences, effortlessly delivered.
 
+</p>
+
 <div align="center">
   <img src="https://img.shields.io/badge/code-PHP-blue.svg" />
   <img src="https://img.shields.io/badge/last%20commit-today-brightgreen.svg" />
