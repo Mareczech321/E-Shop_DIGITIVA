@@ -3,7 +3,6 @@
 </p>
 <p align="center">
   Empowering seamless shopping experiences, effortlessly delivered.
-
 </p>
 
 <div align="center">
