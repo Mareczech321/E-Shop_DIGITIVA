@@ -1,70 +1,83 @@
-# E‑SHOP_DIGITIVA 📦
+<p align="center">
+  <h1 align="center">E-Shop_DIGITIVA</h1>
+</p>
 
-**Empowering seamless shopping experiences, effortlessly delivered.**
+Empowering seamless shopping experiences, effortlessly delivered.
 
----
-
-## ⚙️ Technologies
-
-- **PHP**, **CSS**, *JavaScript*
-- MVC struktura, modulární design
-
----
-
-## 📋 Obsah
-
-- [Přehled](#-přehled)  
-- [Začínáme](#-začínáme)  
-  - [Požadavky](#požadavky)  
-  - [Instalace](#instalace)  
-  - [Použití](#použití)  
-  - [Testování](#testování)  
-- [Funkce](#-funkce)  
-- [Struktura projektu](#-struktura-projektu)  
-- [Přispívání](#-přispívání)  
-- [Licence](#-licence)  
-- [Kontakt](#-kontakt)
+![PHP](https://img.shields.io/badge/code-PHP-blue.svg)
+![Last Commit](https://img.shields.io/badge/last%20commit-today-brightgreen.svg)
+![Languages](https://img.shields.io/github/languages/count/Mareczech321/E-Shop_DIGITIVA.svg)
+![PHP Usage](https://img.shields.io/badge/php-66.9%25-blue.svg)
 
 ---
 
-## 🧐 Přehled
+## Table of Contents
 
-E‑Shop_DIGITIVA je robustní e‑commerce platforma určená k pohodlnému a efektivnímu online nakupování pro zákazníky i administrátory. Je navržena tak, aby poskytovala jednoduché rozhraní, přehledné uživatelské prostředí a snadnou správu.
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ---
 
-## 🟢 Začínáme
+## Overview
 
-### Požadavky
+**E-Shop_DIGITIVA** is a robust e-commerce platform built to simplify online shopping experiences for both users and administrators.
 
-- PHP 7.4+  
-- MySQL (nebo MariaDB)  
-- Webový server (Apache/Nginx)  
+---
+
+## Getting Started
+
+### Prerequisites
+
+- PHP >= 7.4
+- MySQL or MariaDB
 - Composer
+- Web server (e.g., Apache or PHP built-in server)
 
-### Instalace
+### Installation
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/Mareczech321/E-Shop_DIGITIVA.git
 cd E-Shop_DIGITIVA
+```
+
+2. Install dependencies (if using Composer):
+
+```bash
 composer install
 ```
-Nastav konfigurační soubor:
+
+---
+
+## Configuration
+
+Set up your configuration file:
 
 ```ini
 DB_HOST=localhost
 DB_NAME=eshop
 DB_USER=root
-DB_PASS=heslo
+DB_PASS=password
 ```
 
-Naimportuj databázi z `sql/schema.sql` pomocí phpMyAdmin nebo přes příkazovou řádku:
+Import the database from `sql/schema.sql` using phpMyAdmin or terminal:
 
 ```bash
 mysql -u root -p eshop < sql/schema.sql
 ```
 
-Spusť lokální PHP server:
+Start a local PHP server:
 
 ```bash
 php -S localhost:8000
@@ -72,85 +85,84 @@ php -S localhost:8000
 
 ---
 
-### Použití
+## Usage
 
 - **Homepage**: `/`
-- **Registrace**: `register.php`
-- **Přihlášení**: `login.php`
-- **Administrace**: `/admin` (přístupné pouze pro admina)
-- **Košík**: `/cart`
-- **Produkty**: `/products`
-- **Odhlášení**: `logout.php`
+- **Register**: `register.php`
+- **Login**: `login.php`
+- **Admin Panel**: `/admin` (admin only)
+- **Shopping Cart**: `/cart`
+- **Products**: `/products`
+- **Logout**: `logout.php`
 
 ---
 
-### Testování
+## Testing
 
-Základní testy můžeš spustit pomocí PHPUnit (pokud je nastaveno):
+To run unit tests using PHPUnit (if configured):
 
 ```bash
 ./vendor/bin/phpunit tests
 ```
 
-Případně lze testovat manuálně:
+Manual testing:
 
-- Registrace nového uživatele
-- Přihlášení a ověření přístupů (admin vs. běžný uživatel)
-- Přidávání/odebírání produktů do/z košíku
-- Vytváření a správa produktů (admin)
-- Zabezpečení a validace vstupů
-
----
-
-## 🎯 Funkce
-
-- ✅ Registrace a přihlášení uživatelů
-- ✅ Rozlišení práv (zákazník vs. administrátor)
-- ✅ Správa produktů v administračním rozhraní
-- ✅ Nákupní košík
-- ✅ Jednoduchý a přehledný front-end
-- ✅ Bezpečnostní ošetření vstupů (základní validace, session správa)
+- Register a new user
+- Log in and verify access roles
+- Add/remove items to/from the cart
+- Manage products in the admin panel
+- Validate form inputs and security
 
 ---
 
-## 📁 Struktura projektu
+## Features
+
+- ✅ User registration and login
+- ✅ Role-based access (customer/admin)
+- ✅ Product management (CRUD)
+- ✅ Shopping cart functionality
+- ✅ Basic session and input validation
+- ✅ Clean and simple frontend
+
+---
+
+## Project Structure
 
 ```plaintext
 /
-├── admin/         ← administrace (CRUD produktů)
-├── cart/          ← správa košíku
-├── products/      ← výpis produktů
-├── config/        ← databázová konfigurace
-├── css/           ← styly
-├── img/           ← obrázky produktů/bannery
-├── sql/           ← SQL schéma databáze
-├── index.php      ← vstupní stránka
-├── login.php      ← přihlášení
-├── register.php   ← registrace
-├── logout.php     ← odhlášení
-└── vendor/        ← Composer balíčky
+├── admin/         ← product administration
+├── cart/          ← shopping cart logic
+├── products/      ← product listing
+├── config/        ← database configuration
+├── css/           ← stylesheets
+├── img/           ← images and banners
+├── sql/           ← database schema
+├── index.php      ← main landing page
+├── login.php      ← user login
+├── register.php   ← user registration
+├── logout.php     ← logout
+└── vendor/        ← Composer dependencies
 ```
 
 ---
 
-## 🤝 Přispívání
+## Contributing
 
-1. Forkni tento repozitář
-2. Vytvoř větev: `feature/novy-feature`
-3. Proveď změny a commituj
-4. Otevři pull request pro review
-
----
-
-## 📄 Licence
-
-Projekt je k dispozici pod licencí **MIT**. Podrobnosti najdeš v souboru `LICENSE`.
+1. Fork this repository  
+2. Create a new branch: `feature/your-feature`  
+3. Make your changes and commit  
+4. Open a Pull Request
 
 ---
 
-## 📫 Kontakt
+## License
 
-Máš dotaz, návrh nebo chceš spolupracovat?
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
 
-- Vytvoř issue zde na GitHubu
-- Nebo mě kontaktuj přes e-mail: `tvůj-email@example.com`
+---
+
+## Contact
+
+For suggestions, questions, or contributions:
+
+- Open an issue on GitHub
