@@ -1,6 +1,7 @@
 <p align="center">
   <h1 align="center">E-Shop_DIGITIVA</h1>
-
+</p>
+<p align="center">
   Empowering seamless shopping experiences, effortlessly delivered.
 
 </p>
