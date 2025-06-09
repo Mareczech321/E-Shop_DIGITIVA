@@ -4,10 +4,12 @@
 
 Empowering seamless shopping experiences, effortlessly delivered.
 
-![PHP](https://img.shields.io/badge/code-PHP-blue.svg)
-![Last Commit](https://img.shields.io/badge/last%20commit-today-brightgreen.svg)
-![Languages](https://img.shields.io/github/languages/count/Mareczech321/E-Shop_DIGITIVA.svg)
-![PHP Usage](https://img.shields.io/badge/php-66.9%25-blue.svg)
+<p align="center">
+  ![PHP](https://img.shields.io/badge/code-PHP-blue.svg)
+  ![Last Commit](https://img.shields.io/badge/last%20commit-today-brightgreen.svg)
+  ![Languages](https://img.shields.io/github/languages/count/Mareczech321/E-Shop_DIGITIVA.svg)
+  ![PHP Usage](https://img.shields.io/badge/php-66.9%25-blue.svg)
+</p>
 
 ---
 
