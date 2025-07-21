@@ -144,7 +144,6 @@ Manual testing:
 ├── login.php      ← user login
 ├── register.php   ← user registration
 ├── logout.php     ← logout
-└── vendor/        ← Composer dependencies
 ```
 
 ---
@@ -158,11 +157,6 @@ Manual testing:
 
 ---
 
-## License
-
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
-
----
 
 ## Contact
 
