@@ -20,12 +20,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digitiva</title>
-  <link rel="stylesheet" href="./CSS/styles.css" />
+  <link rel="stylesheet" href="./CSS/style.css" />
   <link rel="shortcut icon" href="./IMG/favicon.png" type="image/x-icon">
 </head>
 <body>
   <header class="header">
-    <a href="http://marekmulac.wz.cz:8080" class="logo"></a>
+    <a href="../index.php" class="logo"></a>
 
     <nav id="navigace">
       <a href="./PRODUCTS/computers.php">Computers</a>
@@ -62,7 +62,7 @@
                 $profilePic = "./IMG/PFP/Default.jpg";
             }
 
-            echo '<a href="http://marekmulac.wz.cz:8080/DASHBOARD/"><img src="' . htmlspecialchars($profilePic) . '" alt="Profil" id="profile-pic" style="height:32px; width:32px; border-radius:50%; object-fit:cover;"></a>';
+            echo '<a href="./DASHBOARD/"><img src="' . htmlspecialchars($profilePic) . '" alt="Profil" id="profile-pic" style="height:32px; width:32px; border-radius:50%; object-fit:cover;"></a>';
         } else {
             echo '<a href="./login.php" id="login">Login / Register</a>';
         }
@@ -123,19 +123,25 @@
         <img src="./IMG/Gigabyte AORUS 5090.png" alt="Produkt 1" />
         <h2>Gigabyte AORUS RTX 5090 XTREME WATERFORCE</h2>
         <p class="price">$3,369.65</p>
-        <button>Add to cart</button>
+        <form method="post" action="product.php?id=<?php echo $id; ?>">
+          <input type="hidden" name="product_id" value="<?php echo $id; ?>">
+          <button onclick="addToCart(<?php echo $id; ?>)">Add to cart</button>
+        </form>
       </div>
       <div class="product-card">
         <img src="./IMG/INNO3D-5090.png" alt="Produkt 2" />
         <h2>Inno3D NVIDIA RTX 5090 X3 32GB GDDR7</h2>
         <p class="price">$2,864.78</p>
-        <button>Add to cart</button>
+        <form method="post" action="product.php?id=<?php echo $id; ?>">
+          <input type="hidden" name="product_id" value="<?php echo $id; ?>">
+          <button onclick="addToCart(<?php echo $id; ?>)">Add to cart</button>
+        </form>
       </div>
       <div class="product-card">
         <img src="./IMG/X-Diablo Gamer.png" alt="Produkt 3" />
         <h2>X-Diablo Gamer G711 3070</h2>
         <p class="price">$1,738.69</p>
-        <button>Add to cart</button>
+        <button onclick="addToCart(<?php echo $id; ?>)">Add to cart</button>
       </div>
     <?php } ?>
   </section>
@@ -164,4 +170,37 @@
       navbar.style.top = '80px';
     }, 100);
 });
+</script>
+<script>
+function addToCart(productId) {
+    fetch('./CART/addToCart.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'product_id=' + encodeURIComponent(productId)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Server vrátil chybu " + response.status);
+        }
+        return response.text();
+    })
+    .then(text => {
+        try {
+            const data = JSON.parse(text);
+            const msg = document.getElementById('cart-message');
+            if (data.success) {
+                msg.textContent = "✅ " + data.message;
+                msg.style.color = "green";
+            } else {
+                msg.textContent = "❌ " + data.message;
+                msg.style.color = "red";
+            }
+        } catch (e) {
+            console.error("Neplatná JSON odpověď:", text);
+        }
+    })
+    .catch(err => {
+        console.error("Chyba fetch:", err);
+    });
+}
 </script>

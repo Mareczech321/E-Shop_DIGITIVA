@@ -1,3 +1,12 @@
+<style>
+.added-animation {
+  background: #38c172 !important;
+  color: #fff !important;
+  transform: scale(1.08);
+  transition: background 0.3s, color 0.3s, transform 0.2s, opacity 0.3s;
+  box-shadow: 0 2px 12px rgba(56,193,114,0.15);
+}
+</style>
 <?php
   session_start();
   include '../CONFIG/db.php';
@@ -24,8 +33,12 @@
   <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">
 </head>
 <body>
-  <header class="header">
-    <a href="http://marekmulac.wz.cz:8080" class="logo"></a>
+  <div id="popup-overlay" style="display:none; position:fixed; bottom:20px; right:20px; z-index:9999; width:auto; height:auto;">
+    <div id="popup-message" style="background:#fff; color:#222; padding:18px 40px; border-radius:12px; font-size:1.1em; font-weight:bold; box-shadow:0 4px 24px rgba(0,0,0,0.12); margin:auto;">
+    </div>  
+  </div>
+  <header class="header"> 
+    <a href="../index.php" class="logo"></a>
 
     <form class="search" method="post">
       <input type="text" placeholder="  Search for products" id="search_bar" />
@@ -57,7 +70,7 @@
                 $profilePic = "../IMG/PFP/Default.jpg";
             }
 
-            echo '<a href="http://marekmulac.wz.cz:8080/DASHBOARD/"><img src="' . htmlspecialchars($profilePic) . '" alt="Profil" id="profile-pic" style="height:32px; width:32px; border-radius:50%; object-fit:cover;"></a>';
+            echo '<a href="../DASHBOARD/"><img src="' . htmlspecialchars($profilePic) . '" alt="Profil" id="profile-pic" style="height:32px; width:32px; border-radius:50%; object-fit:cover;"></a>';
         } else {
             echo '<a href="../login.php" id="login">Login / Register</a>';
         }
@@ -131,16 +144,21 @@
       <?php
       include '../CONFIG/db.php';
 
-      $stmt = $pdo->query("SELECT name, price, img_url FROM products ORDER BY id");
+      $stmt = $pdo->query("SELECT id, name, price, img_url FROM products ORDER BY id");      
 
       if ($stmt->rowCount() > 0) {
         foreach ($stmt as $row) {
+          if ($row['img_url'] == NULL) {
+            $row['img_url'] = 'noImage.webp'; 
+          }
+          echo '<a class="noUnderline" href="product.php?id=' . $row['id'] . '" class="product-link">';
           echo '<div class="product-card">';
-          echo '<img src="../IMG/' . ($row['img_url']) . '" alt="' . ($row['name']) . '">';
-          echo '<h2>' . ($row['name']) . '</h2>';
+          echo '<img src="../IMG/' . htmlspecialchars($row['img_url']) . '" alt="' . htmlspecialchars($row['name']) . '">';
+          echo '<h2>' . htmlspecialchars($row['name']) . '</h2>';
           echo '<p class="price">$' . number_format($row['price'], 2, ',', ' ') . '</p>';
-          echo '<button class="do_Kosiku">Add to cart</button>';
+          echo '<button class="do_Kosiku" onclick="event.stopPropagation(); event.preventDefault(); addToCart(' . $row['id'] . ');">Add to cart</button>';  
           echo '</div>';
+          echo '</a>';
         }
       } else {
         echo '<p>No products available</p>';
@@ -213,4 +231,52 @@
       document.getElementById('peripherals_filtr').style.transform = 'rotate(-90deg)'
     }
   }
+</script>
+<script>
+function addToCart(productId) {
+  const btn = event.target;
+  const originalText = btn.textContent;
+  fetch('../CART/addToCart.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'product_id=' + encodeURIComponent(productId)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Server vrátil chybu " + response.status);
+    }
+    return response.text();
+  })
+  .then(text => {
+    try {
+      const data = JSON.parse(text);
+      if (data.success) {
+        btn.textContent = "Přidáno!";
+        btn.classList.add('added-animation');
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('added-animation');
+          btn.disabled = false;
+        }, 2000);
+      }
+    } catch (e) {
+      console.error("Neplatná JSON odpověď:", text);
+    }
+  })
+  .catch(err => {
+    console.error("Chyba fetch:", err);
+  });
+}
+
+function showPopupMessage(message, color = '#222', duration = 3500) {
+  const overlay = document.getElementById('popup-overlay');
+  const msgBox = document.getElementById('popup-message');
+  msgBox.textContent = message;
+  msgBox.style.color = color; 
+  overlay.style.display = 'block';
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, duration);
+}
 </script>

@@ -9,6 +9,7 @@ body {
   background: #f9fafb;
   color: #333;
   line-height: 1.6;
+  filter: contrast(1.5);
 }
 
 a {
@@ -28,6 +29,7 @@ a {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   background: linear-gradient(to bottom right, #D4AF37 0%, #B8860B 100%);
   background-size: cover;
+  filter: contrast(1.5);
 }
 
 .logo {
@@ -44,6 +46,7 @@ a {
   background-size: 80px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  filter: contrast(0.6);
 }
 
 .search {
@@ -54,6 +57,7 @@ a {
   margin: auto;
   position: relative;
   right: -40px;
+  filter: contrast(.5);
 }
 
 #search_bar{
@@ -170,6 +174,7 @@ a {
   object-fit: contain;
   display: block;
   margin: 0 auto 1rem auto;
+  filter: contrast(0.75);
 }
 
 .product-card h2 {
@@ -179,11 +184,27 @@ a {
   top: -75px;
 }
 
+.noUnderline:hover{
+  text-decoration: none;
+}
+
 .price {
   color: #2563eb;
   font-size: 1.2rem;
   position: relative;
   top: 75px;
+}
+
+.price:hover{
+  text-decoration: none;
+}
+
+.do_Kosiku{
+  cursor: pointer;
+}
+.product-card h2:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .product-card button {
@@ -192,7 +213,6 @@ a {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  cursor: pointer;
   position: relative;
   top: 75px;
 }
@@ -235,7 +255,7 @@ a {
 .filtr {
   width: 100%;
   border: none;
-  background-color: #ebcf88;
+  background-color: #ceab54;
   padding: 4px;
   font-size: 16px;
   text-decoration: none;
@@ -330,6 +350,7 @@ a p:hover {
   position: relative;
   width: 400px;
   margin: 10px;
+  cursor: default;
 }
 
 .product-card img {
@@ -357,7 +378,6 @@ a p:hover {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  cursor: pointer;
   margin-top: 10px;
 }
 .products {

@@ -38,12 +38,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitiva - Login</title>
-    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="./CSS/signin.css">
     <link rel="shortcut icon" href="./IMG/favicon.png" type="image/x-icon">
 </head>
 <body>
     <article>
-        <a href="http://marekmulac.wz.cz:8080"><img src="./IMG/Digitiva2.png" id="logo"></a>
+        <a href="./index.php"><img src="./IMG/Digitiva2.png" id="logo"></a>
 
         <form method="post" id="login_form">
             <label for="Username">Username</label><br><input type="text" name="username" placeholder="  Username"><br>

@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <article>
-        <a href="http://marekmulac.wz.cz:8080"><img src="./IMG/Digitiva2.png" id="logo"></a>
+        <a href="./index.php"><img src="./IMG/Digitiva2.png" id="logo"></a>
 
         <form method="post" id="login_form">
             <label for="Username">Username</label><br>

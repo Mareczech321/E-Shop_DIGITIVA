@@ -4,9 +4,6 @@
   padding: 0;
   font-family: "Segoe UI", sans-serif;
 }
-.cta-button:hover{
-  text-decoration: none;
-}
 
 body {
   background: #f9fafb;
@@ -29,6 +26,7 @@ a {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  filter: contrast(2);
 }
 
 .logo {
@@ -45,6 +43,7 @@ a {
   background-size: 80px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  filter: contrast(0.6);
 }
 
 .search {
@@ -54,6 +53,7 @@ a {
   max-width: 400px;
   position: relative;
   right: 267px;
+  filter: contrast(.5);
 }
 
 #search_bar{
@@ -76,50 +76,15 @@ a {
   margin-left: 1rem;
 }
 
-.hero {
-  height: 500px;
-  background-image: url('../IMG/background_cropped.jpg');
-  background-size: cover;               
-  background-position: center center;   
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
-
-#overlay {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  margin-bottom: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background: #cf9400;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  box-shadow: 0 2px 20px rgba(255, 255, 255, 0.25), 1px 0 20px rgba(255, 255, 255, 0.25);
-}
-
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem;
+}
+
+#profile-pic {
+  filter: contrast(1);
 }
 
 .product-card {
@@ -129,6 +94,7 @@ a {
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s;
+  filter: contrast(2);
 }
 
 .product-card button {
@@ -148,6 +114,7 @@ a {
   width: 100%;
   border-radius: 5px;
   margin-bottom: 1rem;
+  filter: contrast(0.5);
 }
 
 .product-card h2 {
@@ -159,6 +126,7 @@ a {
   color: #2563eb;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  filter: contrast(0.75);
 }
 
 .footer {
@@ -219,11 +187,17 @@ a:hover{
 #subnav{
   display: none;
 }
-#nabidky{
+#kosik{
   width: 100%;
   text-align: center;
   font-size: 32px;
   margin-top: 25px;
+}
+
+#produkty{
+    position: relative;
+    top: -10px;
+    right: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -239,7 +213,7 @@ a:hover{
 
   #subnav {
     position: fixed;
-    top: 80px; /* výška headeru */
+    top: 80px; /* vĂ˝Ĺˇka headeru */
     left: 0;
     right: 0;
     background: #fff;
@@ -253,7 +227,7 @@ a:hover{
   }
 
   .hero {
-    margin-top: 110px; /* kvůli header + subnav */
+    margin-top: 110px; /* kvĹŻli header + subnav */
   }
 
   #navigace {

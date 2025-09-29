@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  filter: contrast(2);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  position: relative;
+  height: 90px;
+  left: 75px;
+  background-color: black;
+  padding: 10px 80px;
+  border-radius: 10px;
+  background-image: url(../IMG/Digitiva2.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  filter: contrast(0.6);
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  right: 267px;
+  filter: contrast(.5);
+}
+
+#search_bar{
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search {
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+}
+
+h1{
+    float: right;
+    position: absolute;
+    right: 375px;
+    top: 200px;
+}
+
+.productImage {
+    max-width: 700px;
+    display: block;
+    min-width: 500px;
+    position: relative;
+    filter: contrast(0.75);
+}
+
+.productInfo {
+    font-size: 1.2rem;
+    margin: auto;
+    position: absolute;
+    right: 375px;
+    top: 225px;
+}
+.price {
+    top: 140px;
+    left: 357px;
+}
+.do_Kosiku {
+    background: #cf9400;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: relative;
+    top: 75px;
+    left: 350px;
+}
+.footer {
+  background: #f1f5f9;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1px;
+  font-size: 0.9rem;
+  top: 180px;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+}
+
+#search_bar:focus{
+    outline: none;
+}
+#search_bar{
+    padding-left: 10px;
+}
+#cart{
+  height: 30px;
+  margin-right: 20px;
+  margin-left: -70px;
+}
+#logo{
+  position: relative;
+  height: 80px;
+  left: 75px;
+  background-color: black;
+  padding: 10px 50px;
+  border-radius: 10px;
+  z-index: 1;
+}
+#navigace{
+    margin-right: 300px;
+}
+#navigace a{
+  position: relative;
+  margin-right: 10px;
+  left: 200px;
+}
+#login{
+  position: relative;
+  bottom: 5px;
+}
+a:hover{
+  text-decoration: underline;
+}
+.header{
+  background: linear-gradient(to bottom right, #D4AF37 0%, #B8860B 100%);
+  background-size: cover;
+}
+#subnav{
+  display: none;
+}
+#nabidky{
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+
+  #subnav {
+    position: fixed;
+    top: 80px; /* vĂ˝Ĺˇka headeru */
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 7.5px;
+    z-index: 1;
+    transition: top 0.3s ease;
+    height: 35px;
+  }
+
+  .hero {
+    margin-top: 110px; /* kvĹŻli header + subnav */
+  }
+
+  #navigace {
+    display: none;
+  }
+
+  #login {
+    display: none;
+  }
+
+  .search {
+    max-width: 100px;
+    left: -90px;
+  }
+
+  #cart {
+    position: relative;
+    right: -25px;
+    top: 2.5px;
+  }
+
+  #logo{
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover;
+    object-position: 0 50%;
+    left: -15px;
+  }
+}
