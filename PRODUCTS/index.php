@@ -29,14 +29,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digitiva</title>
-  <link rel="stylesheet" href="../CSS/product.css" />
+  <link rel="stylesheet" href="../CSS/products.css" />
   <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">
 </head>
 <body>
-  <div id="popup-overlay" style="display:none; position:fixed; bottom:20px; right:20px; z-index:9999; width:auto; height:auto;">
-    <div id="popup-message" style="background:#fff; color:#222; padding:18px 40px; border-radius:12px; font-size:1.1em; font-weight:bold; box-shadow:0 4px 24px rgba(0,0,0,0.12); margin:auto;">
-    </div>  
-  </div>
   <header class="header"> 
     <a href="../index.php" class="logo"></a>
 
@@ -156,7 +152,7 @@
           echo '<img src="../IMG/' . htmlspecialchars($row['img_url']) . '" alt="' . htmlspecialchars($row['name']) . '">';
           echo '<h2>' . htmlspecialchars($row['name']) . '</h2>';
           echo '<p class="price">$' . number_format($row['price'], 2, ',', ' ') . '</p>';
-          echo '<button class="do_Kosiku" onclick="event.stopPropagation(); event.preventDefault(); addToCart(' . $row['id'] . ');">Add to cart</button>';  
+          echo '<button class="do_Kosiku" onclick="event.stopPropagation(); event.preventDefault(); addToCart(' . $row['id'] . ')">Add to cart</button>';  
           echo '</div>';
           echo '</a>';
         }
@@ -166,7 +162,9 @@
       ?>
     </div>
   </section>
-
+      <div id="popup">
+        <h3>✅ Produkt přidán do košíku!</h3>
+      </div>
   </section>
 
   <footer class="footer">
@@ -231,11 +229,30 @@
       document.getElementById('peripherals_filtr').style.transform = 'rotate(-90deg)'
     }
   }
-</script>
-<script>
+
+function showPopupMessage(duration = 3000) {
+  const popup = document.getElementById("popup");
+
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 10);
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 400);
+  }, duration);
+}
+
+
 function addToCart(productId) {
   const btn = event.target;
   const originalText = btn.textContent;
+
   fetch('../CART/addToCart.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -254,29 +271,26 @@ function addToCart(productId) {
         btn.textContent = "Přidáno!";
         btn.classList.add('added-animation');
         btn.disabled = true;
+
+        showPopupMessage();
+
         setTimeout(() => {
           btn.textContent = originalText;
           btn.classList.remove('added-animation');
           btn.disabled = false;
         }, 2000);
+      } else {
+        showPopupMessage();
       }
     } catch (e) {
       console.error("Neplatná JSON odpověď:", text);
+      showPopupMessage();
     }
   })
   .catch(err => {
     console.error("Chyba fetch:", err);
+    showPopupMessage();
   });
 }
 
-function showPopupMessage(message, color = '#222', duration = 3500) {
-  const overlay = document.getElementById('popup-overlay');
-  const msgBox = document.getElementById('popup-message');
-  msgBox.textContent = message;
-  msgBox.style.color = color; 
-  overlay.style.display = 'block';
-  setTimeout(() => {
-    overlay.style.display = 'none';
-  }, duration);
-}
 </script>

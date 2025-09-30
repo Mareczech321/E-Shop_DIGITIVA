@@ -97,10 +97,13 @@ h1{
     position: absolute;
     right: 375px;
     top: 225px;
+    padding: 25px;
 }
 .price {
-    top: 140px;
-    left: 357px;
+  position: absolute;
+  top: 140px;
+  left: 390px;
+  color: #2563eb;
 }
 .do_Kosiku {
     background: #cf9400;

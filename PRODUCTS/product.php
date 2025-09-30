@@ -24,7 +24,7 @@ if (!$product) {
   <meta charset="UTF-8">
   <title><?php echo htmlspecialchars($product['name']); ?> | Digitiva</title>
   <link rel="stylesheet" href="../CSS/products.css">
-  <link rel="stylesheet" href="../CSS/singleProduct.css">
+  <link rel="stylesheet" href="../CSS/singleP.css">
 </head>
 <body>
   <header class="header">

@@ -207,6 +207,32 @@ a {
   text-decoration: underline;
 }
 
+#popup {
+  display: none;
+  position: sticky;
+  max-width: 350px;
+  float: right;
+  height: 60px;
+  bottom: 2%;
+  right: 20px;
+  background: #ffad00;
+  color: #093050;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 1000;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#popup.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .product-card button {
   background: #cf9400;
   color: white;
