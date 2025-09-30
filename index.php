@@ -25,7 +25,7 @@
 </head>
 <body>
   <header class="header">
-    <a href="../index.php" class="logo"></a>
+    <a href="./index.php" class="logo"></a>
 
     <nav id="navigace">
       <a href="./PRODUCTS/computers.php">Computers</a>
@@ -86,7 +86,7 @@
   <h2 id="nabidky">
   <?php
     if (isset($_GET['query']) && trim($_GET['query']) !== '') {
-        echo 'Search results for "<em>' . htmlspecialchars($_GET['query']) . '</em>"';
+        echo 'Search results for <b><em>' . htmlspecialchars($_GET['query']) . '</em></b>';
     } else {
         echo 'Popular Products';
     }
@@ -105,6 +105,9 @@
 
           if ($products) {
               foreach ($products as $product) {
+                if (empty($product["img_url"])) {
+                    $product["img_url"] = "./IMG/NoImage.webp";
+                }
                   echo '<div class="product-card">';
                   echo '<img src="' . htmlspecialchars($product["img_url"]) . '" alt="' . htmlspecialchars($product["name"]) . '" />';
                   echo '<h2>' . htmlspecialchars($product["name"]) . '</h2>';
