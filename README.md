@@ -69,11 +69,7 @@ DB_USER="root"
 DB_PASS="password"
 ```
 
-Import the database from `sql/schema.sql` using phpMyAdmin or terminal:
-
-```bash
-mysql -u root -p eshop < sql/schema.sql
-```
+Import the database `marekmulacwz6820.sql` using phpMyAdmin
 
 Start a local PHP server:
 
@@ -85,25 +81,17 @@ php -S localhost:8000
 
 ## Usage
 
-- **Homepage**: `/`
-- **Register**: `register.php`
-- **Login**: `login.php`
-- **Admin Panel**: `/admin` (admin only)
-- **Shopping Cart**: `/cart`
-- **Products**: `/products`
-- **Logout**: `logout.php`
+- **Homepage**: `localhost/[projectName]` or `yourDomain.com`
+  - **Register**: `/register.php`
+  - **Login**: `/login.php`
+  - **Admin Panel**: `/ADMIN-PANEL` (admin only)
+  - **Shopping Cart**: `/CART`
+  - **Products**: `/PRODUCTS`
+  - **Logout**: `/logout.php`
 
 ---
 
-## Testing
-
-To run unit tests using PHPUnit (if configured):
-
-```bash
-./vendor/bin/phpunit tests
-```
-
-Manual testing:
+## Manual testing:
 
 - Register a new user
 - Log in and verify access roles
@@ -127,18 +115,56 @@ Manual testing:
 ## Project Structure
 
 ```plaintext
-/
-├── admin/         ← product administration
-├── cart/          ← shopping cart logic
-├── products/      ← product listing
-├── config/        ← database configuration
-├── css/           ← stylesheets
-├── img/           ← images and banners
-├── sql/           ← database schema
-├── index.php      ← main landing page
-├── login.php      ← user login
-├── register.php   ← user registration
-├── logout.php     ← logout
+└── 📁E-Shop_DIGITIVA
+    └── 📁ADMIN-PANEL
+        ├── index.php
+        ├── upload.php
+    └── 📁CART
+        ├── addToCart.php
+        ├── index.php
+    └── 📁CONFIG
+        ├── config.php
+        ├── db.php
+    └── 📁CSS
+        ├── admin.css
+        ├── cart.css
+        ├── dashboard.css
+        ├── products.css
+        ├── register.css
+        ├── signin.css
+        ├── singleP.css
+        ├── style.css
+    └── 📁DASHBOARD
+        ├── index.php
+    └── 📁IMG
+        └── 📁PFP
+            ├── Default.jpg
+        ├── arrow.png
+        ├── background_cropped.jpg
+        ├── background.jpg
+        ├── burger.svg
+        ├── cart.png
+        ├── Digitiva-inverted.png
+        ├── Digitiva.png
+        ├── Digitiva2.png
+        ├── eye.png
+        ├── favicon.jpg
+        ├── favicon.png
+        ├── Gigabyte AORUS 5090.png
+        ├── hidden.png
+        ├── INNO3D-5090.png
+        ├── logout.png
+        ├── lupa.png
+        ├── noImage.webp
+        ├── X-Diablo Gamer.png
+    └── 📁PRODUCTS
+        ├── index.php
+        ├── product.php
+    ├── index.php
+    ├── login.php
+    ├── logout.php
+    ├── README.md
+    └── register.php
 ```
 
 ---
@@ -146,7 +172,7 @@ Manual testing:
 ## Contributing
 
 1. Fork this repository  
-2. Create a new branch: `feature/your-feature`  
+2. Create a new branch: `feature/yourFeature`  
 3. Make your changes and commit  
 4. Open a Pull Request
 
