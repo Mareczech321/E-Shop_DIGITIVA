@@ -33,7 +33,7 @@
 
 ## Overview
 
-**E-Shop_DIGITIVA** is a robust e-commerce platform built to simplify online shopping experiences for both users and administrators.
+**E-Shop DIGITIVA** is a prototype of e-commerce platform built to simplify online shopping experiences for both users and administrators.
 
 ---
 
@@ -43,7 +43,6 @@
 
 - PHP >= 7.4
 - MySQL or MariaDB
-- Composer
 - Web server (e.g., Apache or PHP built-in server)
 
 ### Installation
@@ -55,11 +54,7 @@ git clone https://github.com/Mareczech321/E-Shop_DIGITIVA.git
 cd E-Shop_DIGITIVA
 ```
 
-2. Install dependencies (if using Composer):
-
-```bash
-composer install
-```
+2. Install dependencies
 
 ---
 
@@ -68,10 +63,10 @@ composer install
 Set up your configuration file:
 
 ```ini
-DB_HOST=localhost
-DB_NAME=eshop
-DB_USER=root
-DB_PASS=password
+DB_HOST="localhost"
+DB_NAME="eshop"
+DB_USER="root"
+DB_PASS="password"
 ```
 
 Import the database from `sql/schema.sql` using phpMyAdmin or terminal:
