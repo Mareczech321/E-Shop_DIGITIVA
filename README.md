@@ -27,7 +27,6 @@
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [Contact](#contact)
-- [License](#mit-license)
 
 ---
 
