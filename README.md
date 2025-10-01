@@ -22,7 +22,7 @@
   - [Installation](#installation)
   - [Configuration](#configuration)
 - [Usage](#usage)
-- [Testing](#testing)
+- [Testing](#manual-testing)
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
