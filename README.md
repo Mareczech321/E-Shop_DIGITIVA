@@ -114,6 +114,25 @@ php -S localhost:8000
 
 ## Project Structure
 
+<details>
+<summary>📁 Show only folders</summary>
+
+```plaintext
+└── 📁E-Shop_DIGITIVA
+    └── 📁ADMIN-PANEL
+    └── 📁CART
+    └── 📁CONFIG
+    └── 📁CSS
+    └── 📁DASHBOARD
+    └── 📁IMG
+        └── 📁PFP
+    └── 📁PRODUCTS
+```
+</details>
+
+<details open>
+<summary>📄 Show full structure with files</summary>
+
 ```plaintext
 └── 📁E-Shop_DIGITIVA
     └── 📁ADMIN-PANEL
@@ -166,6 +185,7 @@ php -S localhost:8000
     ├── README.md
     └── register.php
 ```
+</details>
 
 ---
 
