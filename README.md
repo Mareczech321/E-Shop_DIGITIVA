@@ -115,7 +115,7 @@ php -S localhost:8000
 ## Project Structure
 
 <details>
-<summary>📁 Show only folders</summary>
+<summary>📁 Only folders</summary>
 
 ```plaintext
 └── 📁E-Shop_DIGITIVA
@@ -130,8 +130,8 @@ php -S localhost:8000
 ```
 </details>
 
-<details open>
-<summary>📄 Show full structure with files</summary>
+<details>
+<summary>📄 Full structure with files</summary>
 
 ```plaintext
 └── 📁E-Shop_DIGITIVA
